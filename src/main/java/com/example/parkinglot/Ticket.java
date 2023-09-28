@@ -10,7 +10,7 @@ import java.util.Date;
 //We need to check that it handles leap years and daylight saving time.
 //The input is expected to arrive as four strings of e.g. "28/09/2023" "09:56" "29/09/2023" "10:00"
 public class Ticket {
-    public ArrayList findDifference(String dateEntry, String timeEntry, String dateExit, String timeExit)
+    public ArrayList<Integer> findDifference(String dateEntry, String timeEntry, String dateExit, String timeExit)
     {
         String space = " ";
         String entry = dateEntry.concat(space).concat(timeEntry);

@@ -17,16 +17,16 @@ public class ParkingLot {
     }
     private Ticket ticket;
 
-    public void assignDuration(){
+    public void assignDuration(String dateEntry, String timeEntry, String dateExit, String timeExit){
 
-        ArrayList<Integer> arrayList =ticket.methodName();
+        ArrayList<Integer> arrayList =ticket.findDifference(dateEntry,timeEntry,dateExit,timeExit);
         day = arrayList.get(0);
         hour = arrayList.get(1);
         minute =arrayList.get(2);
     }
 
 
-    public int generateFee(int day, int hour, int minute){
+    public int generateFee(){
 
         int fee = 0 ;
 
