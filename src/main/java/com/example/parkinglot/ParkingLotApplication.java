@@ -14,7 +14,7 @@ public class ParkingLotApplication extends Application {
         ParkingLotView parkingLotView = new ParkingLotView(stage);
         IParkingLot parkingLot;
         ParkingLotFactory parkingLotFactory = new ParkingLotFactory();
-        parkingLot = parkingLotFactory.createParkingLot("Daily parking");
+        parkingLot = parkingLotFactory.createParkingLot(selectedParkingLot);
         Controller controller = new Controller(parkingLot,parkingLotView);
 
     }

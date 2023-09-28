@@ -2,9 +2,7 @@ package com.example.parkinglot;
 
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -23,6 +21,9 @@ public class ParkingLotView {
     private TextField exitDate;
     private TextField exitTime;
     public Button calculateButton;
+
+    public RadioButton dailyParkingButton;
+    public RadioButton defaultParkingButton;
     private Label feeLabel;
 
     public ParkingLotView(Stage stage) {
@@ -52,7 +53,16 @@ public class ParkingLotView {
         HBox exitHBox = new HBox(30, exitDate, exitTime);
         exitHBox.setAlignment(Pos.CENTER);
         calculateButton = createCalculateButton();
-        VBox vBox = new VBox(10, startLabel, userEntryLabel, entryHbox, userExitLabel, exitHBox, calculateButton, feeLabel);
+
+        dailyParkingButton = new RadioButton("Daily Parking");
+        defaultParkingButton = new RadioButton("Long-Term parking");
+
+        ToggleGroup toggleGroup = new ToggleGroup();
+
+        dailyParkingButton.setToggleGroup(toggleGroup);
+        defaultParkingButton.setToggleGroup(toggleGroup);
+
+        VBox vBox = new VBox(10, startLabel, userEntryLabel, entryHbox, userExitLabel, exitHBox, dailyParkingButton, defaultParkingButton,calculateButton, feeLabel);
         vBox.setAlignment(Pos.CENTER);
         Scene scene = new Scene(vBox, 400, 300);
         stage.setTitle("ParkingLot");

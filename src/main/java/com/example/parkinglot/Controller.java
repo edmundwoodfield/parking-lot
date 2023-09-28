@@ -28,5 +28,13 @@ private void setUpHandlers(){
                parkingLotView.setDisplayFee("Date/time values invalid");
            }
        });
+
+       parkingLotView.dailyParkingButton.setOnAction(e->{
+           try{
+
+
+           }
+
+       });
 }
 }
