@@ -21,9 +21,10 @@ public class ParkingLotView {
     private TextField exitDate;
     private TextField exitTime;
     public Button calculateButton;
+    public String selectedParkingLot = "Daily parking";
 
     public RadioButton dailyParkingButton;
-    public RadioButton defaultParkingButton;
+//    public RadioButton defaultParkingButton;
     private Label feeLabel;
 
     public ParkingLotView(Stage stage) {
@@ -54,15 +55,15 @@ public class ParkingLotView {
         exitHBox.setAlignment(Pos.CENTER);
         calculateButton = createCalculateButton();
 
-        dailyParkingButton = new RadioButton("Daily Parking");
-        defaultParkingButton = new RadioButton("Long-Term parking");
+        dailyParkingButton = new RadioButton("Daily parking");
+//        defaultParkingButton = new RadioButton("Long-Term parking");
 
         ToggleGroup toggleGroup = new ToggleGroup();
 
         dailyParkingButton.setToggleGroup(toggleGroup);
-        defaultParkingButton.setToggleGroup(toggleGroup);
+//        defaultParkingButton.setToggleGroup(toggleGroup);
 
-        VBox vBox = new VBox(10, startLabel, userEntryLabel, entryHbox, userExitLabel, exitHBox, dailyParkingButton, defaultParkingButton,calculateButton, feeLabel);
+        VBox vBox = new VBox(10, startLabel, userEntryLabel, entryHbox, userExitLabel, exitHBox, dailyParkingButton,calculateButton, feeLabel);
         vBox.setAlignment(Pos.CENTER);
         Scene scene = new Scene(vBox, 400, 300);
         stage.setTitle("ParkingLot");
@@ -89,6 +90,8 @@ public class ParkingLotView {
         public void setDisplayFee(String s){
         feeLabel.setText(s);
         }
+        public void setParkingLot (String ss){selectedParkingLot = (ss);};
+        public String getSelectedParkingLot () {return selectedParkingLot;};
 
         public Button createCalculateButton(){
         return new Button("Calculate");

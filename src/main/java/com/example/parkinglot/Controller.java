@@ -30,11 +30,7 @@ private void setUpHandlers(){
        });
 
        parkingLotView.dailyParkingButton.setOnAction(e->{
-           try{
-
-
-           }
-
+               parkingLotView.setParkingLot("Daily parking");
        });
 }
 }

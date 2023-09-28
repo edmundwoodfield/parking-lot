@@ -5,6 +5,7 @@ public class ParkingLotFactory {
         switch (parkingType) {
             case "Daily parking":
                 return new ParkingLotDailyParking();
+
             default:
                 return new ParkingLot();
 
