@@ -50,6 +50,9 @@ public class Ticket {
                     + " hours, "
                     + difference_In_Minutes
                     + " minutes");
+        ticketInfo.add(difference_In_Days);
+        ticketInfo.add(difference_In_Hours);
+        ticketInfo.add(difference_In_Minutes);
 //        }
 
         // Catch the Exception
