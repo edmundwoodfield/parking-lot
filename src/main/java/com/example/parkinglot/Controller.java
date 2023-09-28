@@ -22,7 +22,7 @@ private void setUpHandlers(){
                String exitTime = parkingLotView.getExitTime();
                parkingLot.assignDuration(entryDate,entryTime,exitDate,exitTime);
                int fee = parkingLot.generateFee();
-               parkingLotView.setDisplayFee(String.valueOf(fee));
+               parkingLotView.setDisplayFee("Your fee is $" + String.valueOf(fee));
            }
            catch (IllegalArgumentException | ParseException dateParseFail){
                parkingLotView.setDisplayFee("Date/time values invalid");
