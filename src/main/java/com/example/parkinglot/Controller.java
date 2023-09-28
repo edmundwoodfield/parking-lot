@@ -4,9 +4,9 @@ import java.text.ParseException;
 
 // The controller has a constructor which receives the ParkingLot and ParkingLotView and sets up handlers
 public class Controller {
-    ParkingLot parkingLot;
+    IParkingLot parkingLot;
     ParkingLotView parkingLotView;
-   public Controller(ParkingLot parkingLot, ParkingLotView parkingLotView){
+   public Controller(IParkingLot parkingLot, ParkingLotView parkingLotView){
        this.parkingLot = parkingLot;
        this.parkingLotView = parkingLotView;
        setUpHandlers();

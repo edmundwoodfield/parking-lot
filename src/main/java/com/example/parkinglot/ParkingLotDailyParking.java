@@ -3,17 +3,12 @@ package com.example.parkinglot;
 import java.text.ParseException;
 import java.util.ArrayList;
 
-//The parking lot receives the duration of the stay (Day, Hour, Minute) and calculates the fee based on the rules contained in the parking lot
-//        1.  $2 per hour
-//        2.  Always round up (even 1 minute rounds up to the next hour!)
-//        3.  Maximum charge per day is $15.  (ie, if you are there for 10 hours you are billed $15, not $20)
-//        4.  On the first day, if you leave within half an hour of arriving there is no charge
-public class ParkingLot implements IParkingLot{
+public class ParkingLotDailyParking implements IParkingLot{
     private int day;
     private int hour;
     private int minute;
 
-//    public ParkingLot(Ticket ticket) {
+    //    public ParkingLot(Ticket ticket) {
 //        this.ticket = ticket;
 //    }
     private Ticket ticket = new Ticket();
@@ -48,26 +43,18 @@ public class ParkingLot implements IParkingLot{
                 fee += 15 ;
                 return fee;
             }
-            else fee += (2 * hour);
+            else fee += (3 * hour);
             return fee;
 
         }
-        else fee += (2 * hour);
+        else fee += (3 * hour);
 
         if (minute> 0) {
-            fee += 2 ;
+            fee += 3 ;
         }
 
         return fee;
 
     }
 
-
-
-
-
-
-
-
 }
-

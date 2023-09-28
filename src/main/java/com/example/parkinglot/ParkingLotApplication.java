@@ -10,8 +10,11 @@ import java.io.IOException;
 public class ParkingLotApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
+
         ParkingLotView parkingLotView = new ParkingLotView(stage);
-        ParkingLot parkingLot = new ParkingLot();
+        IParkingLot parkingLot;
+        ParkingLotFactory parkingLotFactory = new ParkingLotFactory();
+        parkingLot = parkingLotFactory.createParkingLot("Daily parking");
         Controller controller = new Controller(parkingLot,parkingLotView);
 
     }
