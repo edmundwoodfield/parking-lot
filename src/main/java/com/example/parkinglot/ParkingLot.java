@@ -1,5 +1,6 @@
 package com.example.parkinglot;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 
 //The parking lot receives the duration of the stay (Day, Hour, Minute) and calculates the fee based on the rules contained in the parking lot
@@ -12,12 +13,12 @@ public class ParkingLot {
     private int hour;
     private int minute;
 
-    public ParkingLot(Ticket ticket) {
-        this.ticket = ticket;
-    }
-    private Ticket ticket;
+//    public ParkingLot(Ticket ticket) {
+//        this.ticket = ticket;
+//    }
+    private Ticket ticket = new Ticket();
 
-    public void assignDuration(String dateEntry, String timeEntry, String dateExit, String timeExit){
+    public void assignDuration(String dateEntry, String timeEntry, String dateExit, String timeExit) throws ParseException {
 
         ArrayList<Integer> arrayList =ticket.findDifference(dateEntry,timeEntry,dateExit,timeExit);
         day = arrayList.get(0);

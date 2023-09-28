@@ -11,11 +11,9 @@ public class ParkingLotApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         ParkingLotView parkingLotView = new ParkingLotView(stage);
-//        FXMLLoader fxmlLoader = new FXMLLoader(ParkingLotApplication.class.getResource("hello-view.fxml"));
-//        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-//        stage.setTitle("Hello!");
-//        stage.setScene(scene);
-//        stage.show();
+        ParkingLot parkingLot = new ParkingLot();
+        Controller controller = new Controller(parkingLot,parkingLotView);
+
     }
 
     public static void main(String[] args) {

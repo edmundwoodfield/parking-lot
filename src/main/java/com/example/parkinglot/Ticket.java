@@ -10,8 +10,7 @@ import java.util.Date;
 //We need to check that it handles leap years and daylight saving time.
 //The input is expected to arrive as four strings of e.g. "28/09/2023" "09:56" "29/09/2023" "10:00"
 public class Ticket {
-    public ArrayList<Integer> findDifference(String dateEntry, String timeEntry, String dateExit, String timeExit)
-    {
+    public ArrayList<Integer> findDifference(String dateEntry, String timeEntry, String dateExit, String timeExit) throws ParseException {
         String space = " ";
         String entry = dateEntry.concat(space).concat(timeEntry);
         String exit = dateExit.concat(space).concat(timeExit);
@@ -24,7 +23,7 @@ public class Ticket {
 
 
         // Try Block
-        try {
+//        try {
             // parse method is used to parse the text from a string to produce the date
             Date d1 = sdf.parse(entry);
             Date d2 = sdf.parse(exit);
@@ -51,12 +50,12 @@ public class Ticket {
                     + " hours, "
                     + difference_In_Minutes
                     + " minutes");
-        }
+//        }
 
         // Catch the Exception
-        catch (ParseException e) {
-            System.err.println("Datetime input is wrong");
-        }
+//        catch (ParseException e) {
+//            System.err.println("Datetime input is wrong");
+//        }
 
         return ticketInfo;
     }
