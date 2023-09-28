@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 //Builds a user interface window where they enter the entry/exit datetime and a button to calculate fee and a display of fee
@@ -25,7 +26,9 @@ public class ParkingLotView {
     private Label feeLabel;
 
     public ParkingLotView(Stage stage) {
-        startLabel = new Label("Please enter below the details of your stay in the parking lot so the fee can be calculated");
+        startLabel = new Label("Please enter details of your stay to calculate fee");
+        startLabel.setFont(Font.font("Calibri", 16));
+        startLabel.setAlignment(Pos.CENTER);
         userEntryLabel = new Label("Entry date and time:");
         userExitLabel = new Label("Exit date and time:");
         entryDate = new TextField();
@@ -51,7 +54,7 @@ public class ParkingLotView {
         calculateButton = createCalculateButton();
         VBox vBox = new VBox(10, startLabel, userEntryLabel, entryHbox, userExitLabel, exitHBox, calculateButton, feeLabel);
         vBox.setAlignment(Pos.CENTER);
-        Scene scene = new Scene(vBox, 300, 200);
+        Scene scene = new Scene(vBox, 400, 300);
         stage.setTitle("ParkingLot");
         stage.setScene(scene);
         stage.show();
