@@ -21,7 +21,7 @@ public class ParkingLotView {
     private TextField entryTime;
     private TextField exitDate;
     private TextField exitTime;
-    private Button calculateButton;
+    public Button calculateButton;
     private Label feeLabel;
 
     public ParkingLotView(Stage stage) {
@@ -32,7 +32,7 @@ public class ParkingLotView {
         entryTime = new TextField();
         exitDate = new TextField();
         exitTime = new TextField();
-        calculateButton = createCalculateButton();
+
         feeLabel = new Label("Your fee is: ");
 
         entryTime.setMaxSize(60, 20);
@@ -48,6 +48,7 @@ public class ParkingLotView {
         entryHbox.setAlignment(Pos.CENTER);
         HBox exitHBox = new HBox(30, exitDate, exitTime);
         exitHBox.setAlignment(Pos.CENTER);
+        calculateButton = createCalculateButton();
         VBox vBox = new VBox(10, startLabel, userEntryLabel, entryHbox, userExitLabel, exitHBox, calculateButton, feeLabel);
         vBox.setAlignment(Pos.CENTER);
         Scene scene = new Scene(vBox, 300, 200);
