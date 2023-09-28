@@ -12,7 +12,9 @@ public class Controller {
        setUpHandlers();
    }
 private void setUpHandlers(){
+
        parkingLotView.calculateButton.setOnAction(e -> {
+
            try{
                String entryDate = parkingLotView.getEntryDate();
                String entryTime = parkingLotView.getEntryTime();
